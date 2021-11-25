@@ -1,15 +1,13 @@
 package com.dominiks.recordkeeper
 
 import android.os.Bundle
-import android.view.View
-import android.widget.FrameLayout
-import android.widget.Toast
+import android.view.MenuItem
 import androidx.appcompat.app.AppCompatActivity
 import androidx.fragment.app.commit
 import com.dominiks.recordkeeper.databinding.ActivityMainBinding
 import com.google.android.material.bottomnavigation.BottomNavigationView
 
-class MainActivity : AppCompatActivity() {
+class MainActivity : AppCompatActivity(), BottomNavigationView.OnNavigationItemSelectedListener {
 
     private lateinit var binding: ActivityMainBinding
 
@@ -20,27 +18,7 @@ class MainActivity : AppCompatActivity() {
         binding = ActivityMainBinding.inflate(layoutInflater)
         setContentView(binding.root)
 
-
-        binding.buttonCycling.setOnClickListener {
-            binding.bottomNav
-        }
-
-        binding.buttonRunning.setOnClickListener(object : View.OnClickListener {
-            override fun onClick(v: View?) {
-            }
-        })
-
-        /*binding.buttonCycling.setOnClickListener(this)
-        binding.buttonRunning.setOnClickListener(this)
-    }
-
-    override fun onClick(view: View?) {
-        if (view?.id == R.id.button_cycling) {
-            Toast.makeText(this, "I have clicked on the cycling button", Toast.LENGTH_LONG).show()
-        } else if (view?.id == R.id.button_running) {
-            Toast.makeText(this, "I have clicked on the running button", Toast.LENGTH_LONG).show()
-        }*/
-
+        binding.bottomNav.setOnItemSelectedListener(this)
     }
 
     private fun onRunningClicked() {
@@ -52,6 +30,18 @@ class MainActivity : AppCompatActivity() {
     private fun onCyclingClicked() {
         supportFragmentManager.commit {
             replace(R.id.frame_content, CyclingFragment())
+        }
+    }
+
+    override fun onNavigationItemSelected(item: MenuItem): Boolean {
+        if (item.itemId == R.id.nav_cycling) {
+            onCyclingClicked()
+            return true
+        } else if (item.itemId == R.id.nav_running) {
+            onRunningClicked()
+            return true
+        } else {
+            return false
         }
     }
 }
