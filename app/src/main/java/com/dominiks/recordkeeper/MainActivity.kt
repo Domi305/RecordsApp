@@ -3,25 +3,39 @@ package com.dominiks.recordkeeper
 import android.os.Bundle
 import android.widget.FrameLayout
 import androidx.appcompat.app.AppCompatActivity
+import androidx.fragment.app.commit
 import com.dominiks.recordkeeper.databinding.ActivityMainBinding
 import com.google.android.material.bottomnavigation.BottomNavigationView
 
 class MainActivity : AppCompatActivity() {
-
-    //private lateinit var bottomNav: BottomNavigationView
 
     private lateinit var binding: ActivityMainBinding
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_main)
-        //bottomNav = findViewById(R.id.bottom_nav)
 
         binding = ActivityMainBinding.inflate(layoutInflater)
-        val view = binding.root
-        setContentView(view)
+        setContentView(binding.root)
 
-        val bottomNav: BottomNavigationView = binding.bottomNav
-        val frameContent: FrameLayout = binding.frameContent
+        /*supportFragmentManager.commit {
+            replace(R.id.frame_content, RunningFragment())
+        }*/
+
+        binding.buttonRunning.setOnClickListener { onRunningClicked() }
+        binding.buttonCycling.setOnClickListener { onCyclingClicked() }
+
+    }
+
+    private fun onRunningClicked() {
+        supportFragmentManager.commit {
+            replace(R.id.frame_content, RunningFragment())
+        }
+    }
+
+    private fun onCyclingClicked() {
+        supportFragmentManager.commit {
+            replace(R.id.frame_content, CyclingFragment())
+        }
     }
 }
