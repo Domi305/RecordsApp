@@ -3,14 +3,15 @@
   <component name="DesignSurface">
     <option name="filePathToZoomLevelMap">
       <map>
+        <entry key="..\:/android_londyn/RecordKeeper/app/src/main/res/drawable/gradient_overlay.xml" value="0.24375" />
         <entry key="..\:/android_londyn/RecordKeeper/app/src/main/res/drawable/ic_cycling_24.xml" value="0.23148148148148148" />
         <entry key="..\:/android_londyn/RecordKeeper/app/src/main/res/drawable/ic_running_24.xml" value="0.23148148148148148" />
         <entry key="..\:/android_londyn/RecordKeeper/app/src/main/res/layout/activity_main.xml" value="0.264" />
         <entry key="..\:/android_londyn/RecordKeeper/app/src/main/res/layout/constraint_layout_1.xml" value="0.264" />
         <entry key="..\:/android_londyn/RecordKeeper/app/src/main/res/layout/constraint_layout_2.xml" value="0.264" />
         <entry key="..\:/android_londyn/RecordKeeper/app/src/main/res/layout/constraint_layout_3.xml" value="0.264" />
-        <entry key="..\:/android_londyn/RecordKeeper/app/src/main/res/layout/fragment_cycling.xml" value="0.2234375" />
-        <entry key="..\:/android_londyn/RecordKeeper/app/src/main/res/layout/fragment_running.xml" value="0.264" />
+        <entry key="..\:/android_londyn/RecordKeeper/app/src/main/res/layout/fragment_cycling.xml" value="0.264" />
+        <entry key="..\:/android_londyn/RecordKeeper/app/src/main/res/layout/fragment_running.xml" value="0.1" />
         <entry key="..\:/android_londyn/RecordKeeper/app/src/main/res/menu/bottom_nav.xml" value="0.2234375" />
       </map>
     </option>
